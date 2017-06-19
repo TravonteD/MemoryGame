@@ -79,20 +79,26 @@ $(document).ready(function(){
         if(selected1 === ""){
             selected1 = $(this).children().attr("src");
             selectedId1 = ("#"+id);
-            alert(selected1 + selectedId1);
         }
         else{
             selected2 = $(this).children().attr("src");
             selectedId2 = ("#"+id);
-            alert(selected2+selectedId2);
 
             if (selected1 === selected2){
                 $(selectedId1).children().hide();
                 $(selectedId2).children().hide();
+                selected1 = "";
+                selected2 = "";
+                selectedId1 = "";
+                selectedId2 = "";
             }
             else {
-                $(selectedId1).attr("src", "img/card-back.jpg");
-                $(selectedId2).attr("src", "img/card-back.jpg");
+                $(selectedId1).children().attr("src", "img/card-back.jpg");
+                $(selectedId2).children().attr("src", "img/card-back.jpg");
+                selected1 = "";
+                selected2 = "";
+                selectedId1 = "";
+                selectedId2 = "";
             }
         }
     })
