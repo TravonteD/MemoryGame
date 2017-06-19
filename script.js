@@ -16,6 +16,8 @@ $(document).ready(function(){
     //declare variable to hold the selected cards
     var selected1;
     var selected2;
+    var selectedId1;
+    var selectedId2;
     function shuffle(array){
 
         for(var i=0; i<array.length;i++){
@@ -31,6 +33,16 @@ $(document).ready(function(){
         shuffle(deck);
         selected1 = "";
         selected2 = "";
+        selectedId1 = "";
+        selectedId2 = "";
+        $("#card1 img").attr("src", "img/card-back.jpg");
+        $("#card2 img").attr("src", "img/card-back.jpg");
+        $("#card3 img").attr("src", "img/card-back.jpg");
+        $("#card4 img").attr("src", "img/card-back.jpg");
+        $("#card5 img").attr("src", "img/card-back.jpg");
+        $("#card6 img").attr("src", "img/card-back.jpg");
+        $("#card7 img").attr("src", "img/card-back.jpg");
+        $("#card8 img").attr("src", "img/card-back.jpg");
     });
 
     $(".card").click(function(){
@@ -66,11 +78,18 @@ $(document).ready(function(){
         //keep track of the two selected cards
         if(selected1 === ""){
             selected1 = $(this).children().attr("src");
-            alert(selected1);
+            selectedId1 = ("#"+id);
+            alert(selected1 + selectedId1);
         }
         else{
             selected2 = $(this).children().attr("src");
-            alert(selected2);
+            selectedId2 = ("#"+id);
+            alert(selected2+selectedId2);
+
+            if (selected1 === selected2){
+                $(selectedId1).children().hide();
+                $(selectedId2).children().hide();
+            }
         }
     })
 
