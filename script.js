@@ -35,14 +35,14 @@ $(document).ready(function(){
         selected2 = "";
         selectedId1 = "";
         selectedId2 = "";
-        $("#card1 img").attr("src", "img/card-back.jpg");
-        $("#card2 img").attr("src", "img/card-back.jpg");
-        $("#card3 img").attr("src", "img/card-back.jpg");
-        $("#card4 img").attr("src", "img/card-back.jpg");
-        $("#card5 img").attr("src", "img/card-back.jpg");
-        $("#card6 img").attr("src", "img/card-back.jpg");
-        $("#card7 img").attr("src", "img/card-back.jpg");
-        $("#card8 img").attr("src", "img/card-back.jpg");
+        $("#card1 img").attr("src", "img/card-back.jpg").show();
+        $("#card2 img").attr("src", "img/card-back.jpg").show();
+        $("#card3 img").attr("src", "img/card-back.jpg").show();
+        $("#card4 img").attr("src", "img/card-back.jpg").show();
+        $("#card5 img").attr("src", "img/card-back.jpg").show();
+        $("#card6 img").attr("src", "img/card-back.jpg").show();
+        $("#card7 img").attr("src", "img/card-back.jpg").show();
+        $("#card8 img").attr("src", "img/card-back.jpg").show();
     });
 
     $(".card").click(function(){
@@ -89,6 +89,10 @@ $(document).ready(function(){
             if (selected1 === selected2){
                 $(selectedId1).children().hide();
                 $(selectedId2).children().hide();
+            }
+            else {
+                $(selectedId1).attr("src", "img/card-back.jpg");
+                $(selectedId2).attr("src", "img/card-back.jpg");
             }
         }
     })
