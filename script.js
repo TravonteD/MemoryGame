@@ -18,6 +18,7 @@ $(document).ready(function(){
     var selected2;
     var selectedId1;
     var selectedId2;
+    var matchCount=0; //counts how many matches made
     function shuffle(array){
 
         for(var i=0; i<array.length;i++){
@@ -85,12 +86,13 @@ $(document).ready(function(){
             selectedId2 = ("#"+id);
 
             if (selected1 === selected2){
-                $(selectedId1).children().hide();
-                $(selectedId2).children().hide();
+                $(selectedId1).children().fadeOut(2000);
+                $(selectedId2).children().fadeOut(2000);
                 selected1 = "";
                 selected2 = "";
                 selectedId1 = "";
                 selectedId2 = "";
+                matchCount+=1;
             }
             else {
                 $(selectedId1).children().attr("src", "img/card-back.jpg");
@@ -100,6 +102,10 @@ $(document).ready(function(){
                 selectedId1 = "";
                 selectedId2 = "";
             }
+        }
+
+        if(matchCount === 4){
+            alert("you win!"+"\nClick start to play again");
         }
     })
 
